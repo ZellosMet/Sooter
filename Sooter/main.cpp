@@ -121,6 +121,7 @@ void main()
 			case 32: cout << "\a" << endl; cnt_jamp++; game_on = false; break;		//Прыжок
 			case 13: cout << "\a\a\a" << endl; cnt_shoot++; game_on = false;break;	//Выстрел
 			}
+			system("cls");
 			end_rend = true;
 		} while (game_on);
 //*******		
