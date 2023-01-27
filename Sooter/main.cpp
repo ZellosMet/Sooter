@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<conio.h>
 using namespace std;
 
@@ -6,45 +6,45 @@ void main()
 {
 	setlocale(LC_ALL, "ru");
 
-	int side_length;			//Длина стороны игровой зоны
-	int game_zone;				//Общей полощадь игровой зоны
-	int player_position;		//Начальная позиция игрока(всегда в центре)
-	int code_key;				//Код клавиши
-	char symbol_void = 'O';		//Символ пустоты
-	char player = 'X';			//Символ игрока
-	int zone_rend_step = 0;		//Шаг отрисовки игровой зоны
-	int cnt_step = 0;			//Счётчик шагов
-	int cnt_shoot = 0;			//Счётчик выстрелов
-	int cnt_jamp = 0;			//Счётчик прыжков
-	bool end_rend = true;		//Конец отрисовки
-	bool game_on = true;		//Игра включена
-	bool ext_game = true;		//Выход из игры	
+	int side_length;			//Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ РёРіСЂРѕРІРѕР№ Р·РѕРЅС‹
+	int game_zone;				//РћР±С‰РµР№ РїРѕР»РѕС‰Р°РґСЊ РёРіСЂРѕРІРѕР№ Р·РѕРЅС‹
+	int player_position;		//РќР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёСЏ РёРіСЂРѕРєР°(РІСЃРµРіРґР° РІ С†РµРЅС‚СЂРµ)
+	int code_key;				//РљРѕРґ РєР»Р°РІРёС€Рё
+	char symbol_void = 'O';		//РЎРёРјРІРѕР» РїСѓСЃС‚РѕС‚С‹
+	char player = 'X';			//РЎРёРјРІРѕР» РёРіСЂРѕРєР°
+	int zone_rend_step = 0;		//РЁР°Рі РѕС‚СЂРёСЃРѕРІРєРё РёРіСЂРѕРІРѕР№ Р·РѕРЅС‹
+	int cnt_step = 0;			//РЎС‡С‘С‚С‡РёРє С€Р°РіРѕРІ
+	int cnt_shoot = 0;			//РЎС‡С‘С‚С‡РёРє РІС‹СЃС‚СЂРµР»РѕРІ
+	int cnt_jamp = 0;			//РЎС‡С‘С‚С‡РёРє РїСЂС‹Р¶РєРѕРІ
+	bool end_rend = true;		//РљРѕРЅРµС† РѕС‚СЂРёСЃРѕРІРєРё
+	bool game_on = true;		//РРіСЂР° РІРєР»СЋС‡РµРЅР°
+	bool ext_game = true;		//Р’С‹С…РѕРґ РёР· РёРіСЂС‹	
 
 
-	cout << "Введите нечётное число для генерации игровой зоны(рекомендуемый диапозон от 1 до 15)" << endl; cin >> side_length;
+	cout << "Р’РІРµРґРёС‚Рµ РЅРµС‡С‘С‚РЅРѕРµ С‡РёСЃР»Рѕ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РёРіСЂРѕРІРѕР№ Р·РѕРЅС‹(СЂРµРєРѕРјРµРЅРґСѓРµРјС‹Р№ РґРёР°РїРѕР·РѕРЅ РѕС‚ 1 РґРѕ 15)" << endl; cin >> side_length;
 
-	if (side_length%2==0)	//Проверка на нечётность
+	if (side_length%2==0)	//РџСЂРѕРІРµСЂРєР° РЅР° РЅРµС‡С‘С‚РЅРѕСЃС‚СЊ
 	{
 		side_length--;
 	}
 	game_zone = side_length*side_length;
 	player_position = game_zone/2;
 
-	cout << "Игровое поле состоит из двух символов: 'О' - пустая область, 'Х' - позиция игрока\n";
-	cout << "Прыжок или выстрел сопровождается звуковым сигналом\n";
-	cout << "Управление:\n";
-	cout << "w - Шаг вверх\n";
-	cout << "s - Шаг вниз\n";
-	cout << "a - Шаг влево\n";
-	cout << "d - Шаг вправо\n";
-	cout << "Enter - выстрел\n";
-	cout << "Space - Пражок\n";
-	cout << "Esc - Выход\n\n";
+	cout << "РРіСЂРѕРІРѕРµ РїРѕР»Рµ СЃРѕСЃС‚РѕРёС‚ РёР· РґРІСѓС… СЃРёРјРІРѕР»РѕРІ: 'Рћ' - РїСѓСЃС‚Р°СЏ РѕР±Р»Р°СЃС‚СЊ, 'РҐ' - РїРѕР·РёС†РёСЏ РёРіСЂРѕРєР°\n";
+	cout << "РџСЂС‹Р¶РѕРє РёР»Рё РІС‹СЃС‚СЂРµР» СЃРѕРїСЂРѕРІРѕР¶РґР°РµС‚СЃСЏ Р·РІСѓРєРѕРІС‹Рј СЃРёРіРЅР°Р»РѕРј\n";
+	cout << "РЈРїСЂР°РІР»РµРЅРёРµ:\n";
+	cout << "w - РЁР°Рі РІРІРµСЂС…\n";
+	cout << "s - РЁР°Рі РІРЅРёР·\n";
+	cout << "a - РЁР°Рі РІР»РµРІРѕ\n";
+	cout << "d - РЁР°Рі РІРїСЂР°РІРѕ\n";
+	cout << "Enter - РІС‹СЃС‚СЂРµР»\n";
+	cout << "Space - РџСЂР°Р¶РѕРє\n";
+	cout << "Esc - Р’С‹С…РѕРґ\n\n";
 
-//Цикл входа в игру
+//Р¦РёРєР» РІС…РѕРґР° РІ РёРіСЂСѓ
 	while (ext_game)
 	{
-		do //Цикл отрисовки игрового поля и статистики
+		do //Р¦РёРєР» РѕС‚СЂРёСЃРѕРІРєРё РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ Рё СЃС‚Р°С‚РёСЃС‚РёРєРё
 		{
 			while (zone_rend_step < game_zone && end_rend)
 			{
@@ -76,16 +76,16 @@ void main()
 			cout << endl << endl;
 			game_on = true;
 			zone_rend_step = 0;
-			cout << "Число шагов: " << cnt_step << endl;
-			cout << "Число прыжков: " << cnt_jamp << endl;
-			cout << "Число выстрелов: " << cnt_shoot << endl;
+			cout << "Р§РёСЃР»Рѕ С€Р°РіРѕРІ: " << cnt_step << endl;
+			cout << "Р§РёСЃР»Рѕ РїСЂС‹Р¶РєРѕРІ: " << cnt_jamp << endl;
+			cout << "Р§РёСЃР»Рѕ РІС‹СЃС‚СЂРµР»РѕРІ: " << cnt_shoot << endl;
 //******
-//Обработчик нажатия клавиш
+//РћР±СЂР°Р±РѕС‚С‡РёРє РЅР°Р¶Р°С‚РёСЏ РєР»Р°РІРёС€
 			code_key = _getch();
 
 			switch (code_key)
 			{
-			case 119: cout << endl;		//Шаг вверх
+			case 119: cout << endl;		//РЁР°Рі РІРІРµСЂС…
 				if ((player_position- side_length) >= 0)
 				{
 					player_position -= side_length; cnt_step++; game_on = false;
@@ -95,13 +95,13 @@ void main()
 					player_position += game_zone-side_length; cnt_step++; game_on = false;
 				}
 				break;	
-			case 97: cout << endl;		//Шаг влево
+			case 97: cout << endl;		//РЁР°Рі РІР»РµРІРѕ
 				if ((player_position-1) >= 0)
 				{
 					player_position--; cnt_step++; game_on = false;
 				}
 				break;
-			case 115: cout << endl;		//Шаг вниз	
+			case 115: cout << endl;		//РЁР°Рі РІРЅРёР·	
 				if ((player_position+ side_length) < game_zone)
 				{
 					player_position += side_length; cnt_step++; game_on = false;
@@ -111,21 +111,21 @@ void main()
 					player_position -= game_zone - side_length; cnt_step++; game_on = false;
 				}
 				break;
-			case 100: cout << endl;		//Шаг вправо
+			case 100: cout << endl;		//РЁР°Рі РІРїСЂР°РІРѕ
 				if ((player_position+1) < game_zone)
 				{
 					player_position++; cnt_step++; game_on = false;
 				}
 				break;
-			case 27: cout << endl; ext_game = false; game_on = false; break;		//Выход из игры
-			case 32: cout << "\a" << endl; cnt_jamp++; game_on = false; break;		//Прыжок
-			case 13: cout << "\a\a\a" << endl; cnt_shoot++; game_on = false;break;	//Выстрел
+			case 27: cout << endl; ext_game = false; game_on = false; break;		//Р’С‹С…РѕРґ РёР· РёРіСЂС‹
+			case 32: cout << "\a" << endl; cnt_jamp++; game_on = false; break;		//РџСЂС‹Р¶РѕРє
+			case 13: cout << "\a\a\a" << endl; cnt_shoot++; game_on = false;break;	//Р’С‹СЃС‚СЂРµР»
 			}
 			system("cls");
 			end_rend = true;
 		} while (game_on);
 //*******		
 	}
-//Выход
+//Р’С‹С…РѕРґ
 	cout << "Game Over" << endl;
 }
